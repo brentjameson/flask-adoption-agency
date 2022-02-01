@@ -1,0 +1,28 @@
+.pet {
+    margin: 3%;
+    position: relative;
+
+}
+
+#pets-h1 {
+    text-align: center;
+    font-size: 6rem;
+}
+
+.btn-success {
+    margin-left: 3%;
+    font-size: 2rem;
+    border-radius: 1.5rem;
+    position: relative;
+}
+
+h1 {
+    font-family: monospace;
+    font-size: 2rem;
+}
+
+#availability {
+    position: absolute;
+    right: 50%;
+    top: -15%;
+}

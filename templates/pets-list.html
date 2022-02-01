@@ -6,24 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/app.css">
     <title>Pets List</title>
 </head>
 <body>
-    <h1>Pets</h1>
-    <a href="/add">Add Pet</a>
-    <div class='row'> 
-        <div class='col-sm-12'>
-            {% for pet in pets %}
+    <h1 class = 'display-2' id= pets-h1>Pets</h1>
+    <form action="/add">
+        <button type="button" class="btn btn-success">Add Pet</button>
+    </form>
+    <div class='d-flex flex-row flex-wrap'> 
+        {% for pet in pets %}
+        <div class='pet' style='width: 25%'>
             <a href="/{{pet.id}}">
-                <div class='col-sm-12'>
-                    {%if pet.available %}
+                {%if pet.available %}
+                <div id='availability'>
                     {{pet.name}} is available
-                    {% endif %}
+                {% endif %}
                 </div>
-            <img src="{{pet.photo_url}}" alt="">
-            {% endfor %}
-        </a>
+                <img src="{{pet.photo_url}}" alt="">
+            </a>
         </div>
+        {% endfor %}
     </div>
 </body>
 </html>
